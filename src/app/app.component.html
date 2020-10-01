@@ -1,0 +1,19 @@
+<div class="container main-container">
+    <div class="row">
+        <div class="col-6">
+            <h1>FireChat</h1>
+        </div>
+        <div class="col-6 text-right">
+            <button type="button" class="btn btn-outline-danger mt-2" (click)="logout()" *ngIf="chatService.userLocal.userId">Cerrar sesion</button>
+            <div class="mt-2">
+                <app-login *ngIf="!chatService.userLocal.userId"></app-login>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="chat-window" *ngIf="chatService.userLocal.userId">
+        <app-chat></app-chat>
+    </div>
+</div>
